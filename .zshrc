@@ -45,6 +45,6 @@ case "${OSTYPE}" in
   ;;
 esac
 
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
-source /Users/taka/zaw/zaw.zsh
+#bindkey "^p" history-beginning-search-backward-end
+#bindkey "^n" history-beginning-search-forward-end
+# source /Users/taka/zaw/zaw.zsh
