@@ -15,7 +15,7 @@ compinit
 setopt auto_cd
 
 ### Prompt ###
-local p_info="%F{red}%n@%m%f"
+local p_info="%F{red}%n@%M%f"
 local p_cdir="%F{cyan}%~%f"
 local p_mark="%F{green}%(!,#,$)%b"
 PROMPT="$p_info $p_cdir"$'\n'"$p_mark "
