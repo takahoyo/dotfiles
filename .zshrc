@@ -2,6 +2,7 @@
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z} r:|[-_.]=**'
 autoload -U compinit && compinit
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 
@@ -15,7 +16,19 @@ setopt auto_cd
 local p_info="%F{red}%n@%M%f"
 local p_cdir="%F{cyan}%~%f"
 local p_mark="%F{green}%(!,#,$)%b"
-PROMPT="$p_info $p_cdir"$'\n'"$p_mark "
+
+### git ###
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd(){ vcs_info }
+
+PROMPT='${p_info} ${p_cdir} ${vcs_info_msg_0_}'$'\n'"$p_mark "
 
 ### History ###
 HISTFILE=~/.histfile
