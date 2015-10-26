@@ -61,3 +61,8 @@ esac
 #bindkey "^p" history-beginning-search-backward-end
 #bindkey "^n" history-beginning-search-forward-end
 # source /Users/taka/zaw/zaw.zsh
+export PATH="/usr/local/sbin:$PATH"
+
+##nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
