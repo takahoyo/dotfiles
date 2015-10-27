@@ -1,4 +1,13 @@
 #! /bin/sh
 
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
+case "${OSTYPE}" in 
+	darwin*)
+		os=mac
+	;;
+	linux*)
+		os=linux
+	;;
+esac
+
+ln -sf ~/dotfiles/$os/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/$os/.vimrc ~/.vimrc
