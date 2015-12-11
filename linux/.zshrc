@@ -6,9 +6,6 @@ autoload -U compinit && compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 
-#文字コード
-#export LANG=ja_JP.UTF-8
-
 #ディレクトリ名でcd
 setopt auto_cd
 
@@ -16,6 +13,12 @@ setopt auto_cd
 local p_info="%F{red}%n@%M%f"
 local p_cdir="%F{cyan}%~%f"
 local p_mark="%F{green}%(!,#,$)%b"
+
+### RemoteHost ###
+if [[ -n "${SSH_CONNECTION}" ]]; then
+	local lip=`echo ${SSH_CONNECTION} | cut -d " " -f1`
+	local rip=`echo ${SSH_CONNECTION} | cut -d " " -f3`
+	local p_info="%F{red}%n@${lip}->${HOSTNAME}(${rip})%f"
 
 ### git ###
 autoload -Uz vcs_info
