@@ -15,10 +15,11 @@ local p_cdir="%F{cyan}%~%f"
 local p_mark="%F{green}%(!,#,$)%b"
 
 ### RemoteHost ###
-if [[ -n "${SSH_CONNECTION}" ]]; then
+if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
 	local lip=`echo ${SSH_CONNECTION} | cut -d " " -f1`
 	local rip=`echo ${SSH_CONNECTION} | cut -d " " -f3`
-	local p_info="%F{red}%n@${lip}->${HOSTNAME}(${rip})%f"
+	local p_host="%F{yellow}$lip->${HOSTNAME}($rip)%f"
+fi
 
 ### git ###
 autoload -Uz vcs_info
@@ -32,6 +33,7 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd(){ vcs_info }
 
 PROMPT='${p_info} ${p_cdir} ${vcs_info_msg_0_}'$'\n'"$p_mark "
+RPROMPT='${p_host}'
 
 ### History ###
 HISTFILE=~/.histfile
