@@ -36,7 +36,7 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd(){ vcs_info }
 
 RPROMPT="${p_host}"
-PROMPT="${p_info} ${p_cdir} ${vcs_info_msg_0_}"$'\n'"$p_mark "
+PROMPT='${p_info} ${p_cdir} ${vcs_info_msg_0_}'$'\n'"$p_mark "
 
 ### History ###
 HISTFILE=~/.histfile
