@@ -6,6 +6,7 @@ case "${OSTYPE}" in
 	;;
 	linux*)
 		os=linux
+		ln -sf ~/dotfiles/linux/.screenrc ~/.screenrc
 	;;
 esac
 
