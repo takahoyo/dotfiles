@@ -55,5 +55,12 @@ alias ls="ls -G"
 export PATH="/usr/local/sbin:$PATH"
 
 ##nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if [ -e ~/.nvm ]; then
+	export NVM_DIR=~/.nvm
+	source $(brew --prefix nvm)/nvm.sh
+fi
+
+## Android ADB
+if [ -e ~/Library/Android/sdk/platform-tools/ ]; then
+	export PATH=$PATH:~/Library/Android/sdk/platform-tools/
+fi
