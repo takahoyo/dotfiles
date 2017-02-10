@@ -15,7 +15,7 @@ setopt auto_cd
 ### Prompt ###
 local p_info="%F{red}%n@%M%f"
 local p_cdir="%F{cyan}%~%f"
-local p_mark="%F{green}%(!,#,$)%b"
+local p_mark="%F{green}%(!,#,$)%f"
 
 ### git ###
 autoload -Uz vcs_info
