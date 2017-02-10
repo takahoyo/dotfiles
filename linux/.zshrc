@@ -11,7 +11,7 @@ setopt auto_cd
 ### Prompt ###
 local p_info="%F{red}%n@%M%f"
 local p_cdir="%F{cyan}%~%f"
-local p_mark="%F{green}%(!,#,$)%b%f"
+local p_mark="%F{green}%(!,#,$)%f"
 
 ### RemoteHost ###
 if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
