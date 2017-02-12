@@ -64,3 +64,8 @@ fi
 if [ -e ~/Library/Android/sdk/platform-tools/ ]; then
 	export PATH=$PATH:~/Library/Android/sdk/platform-tools/
 fi
+
+## VMware Fusion CLI
+if [ -e /Applications/VMware\ Fusion.app/Contents/Library ]; then
+	export PATH=$PATH:/Applications/VMware\ Fusion.app/Contents/Library
+fi
