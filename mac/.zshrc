@@ -52,7 +52,7 @@ alias ls="ls -G"
 #bindkey "^p" history-beginning-search-backward-end
 #bindkey "^n" history-beginning-search-forward-end
 # source /Users/taka/zaw/zaw.zsh
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 
 ##nvm
 if [ -e ~/.nvm ]; then
