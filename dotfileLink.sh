@@ -12,3 +12,4 @@ esac
 
 ln -sf ~/dotfiles/$os/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/$os/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/$os/.tmux.conf ~/.tmux.conf
